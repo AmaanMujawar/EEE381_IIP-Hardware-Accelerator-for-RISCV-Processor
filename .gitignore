@@ -1,0 +1,9 @@
+# Ignore all auxiliary latex files
+Documents/PID/.aux/*.aux
+Documents/PID/.aux/*.fdb_latexmk
+Documents/PID/.aux/*.fls
+Documents/PID/.aux/*.lof
+Documents/PID/.aux/*.log
+Documents/PID/.aux/*.lot
+Documents/PID/.aux/*.gz
+Documents/PID/.aux/*.toc
