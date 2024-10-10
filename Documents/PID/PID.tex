@@ -1,37 +1,73 @@
 \documentclass[11pt,oneside]{book}
-\usepackage[margin=1.2in]{geometry}
-\usepackage[toc,page]{appendix}
+\usepackage[margin=2em, bottom=3em]{geometry}
 \usepackage{graphicx}
-\usepackage{natbib}
-\usepackage{caption}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot[C]{\thepage}
+\usepackage{array}
+\usepackage{ragged2e}
+
+\pagestyle{plain}
 
 \begin{document}
-    \centering
-    \vspace*{1.5cm}
 
-    {\Huge\bfseries Process Initialisation Document: Hardware Accelerator for RISCV processor\par}
-    \vspace{2.5cm}
-    \includegraphics[width=0.3\textwidth]{images/logo.png}\par
-    \vspace{2.5cm}
+\begin{center}
+    \textbf{\large THE UNIVERSITY OF SHEFFIELD}\\[1em]
+    \textbf{\large School of Electrical and Electronic Engineering}\\[0.5em]
+    \textbf{3\textsuperscript{rd} Year Individual Project --- Project Initialisation Document}\\[1em]
 
-    {\Large\bfseries Amaan Mujawar\par}
-    \vspace{0.5cm}
-    {University of Sheffield\\}
-    {Department of Electronics and Electrical Engineering}
-    \vfill
+    \begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{8cm}|}
+        \hline
+        Student Name & Amaan Mujawar \\ 
+        \hline
+        Project Title & Hardware Accelerator for RISCV Processor \\ 
+        \hline
+        \multicolumn{2}{|c|}{
+            Supervisor \hspace{1em} \textbar \hspace{1em} Mr Neil Powell \hspace{1em} \textbar \hspace{1em} 
+            Second Marker \hspace{1em} \textbar \hspace{1em} FName LName
+        } \\ 
+        \hline
+    \end{tabular}
+    \\[2em]
+\end{center}
 
-    \textit{Supervised by\\}
-    Mr Neil Powell
-    \vfill
+\noindent
+\textbf{Project Motivation:} \\
+Introduce your project and the topic area so that someone with no engineering background could understand it. Include enough theory to justify the project and clarify the goals. 
 
-    \textit{A report submitted in partial fulfilment of the\\
-    requirements for the degree of}\par
-    {Master of Electronics and Electrical Engineering}
-    \vspace{0.5cm}
+\vspace{1em}
 
-    {\large\today}
+\noindent
+\textbf{Project Specification:} \\
+This specification outlines the project's goals and deliverables. It should be clear enough for another person to carry out the work based solely on this document, without delving into required theory.
+
+\vspace{1em}
+
+\noindent
+\textbf{Project Schedule:} \\
+Identify the main tasks and work packages associated with the project. Outline a clear plan to reach the project’s completion, indicating interdependencies and critical paths. Include milestones in a Gantt chart.
+
+\vspace{1em}
+
+% New page
+\newpage
+
+\noindent
+\textbf{Risk Register:} \\
+Identify key risks that could delay project completion. Evaluate their likelihood and impact, and propose mitigation strategies. Consider if certain risks expire after specific project phases.
+
+\begin{center}
+    \begin{table}[ht]
+        \centering
+        \resizebox{\textwidth}{!}{%
+            \begin{tabular}{|c|c|c|c|c|} 
+                \hline
+                \textbf{No.} & \textbf{Description of Risk} & \textbf{Risk Evaluation (L/M/H)} & \textbf{Chance of Risk Occurring (L/M/H)} & \textbf{Mitigation of Risk} \\ 
+                \hline
+                1 & Loss of data & M & L & Multiple backups \\ 
+                \hline
+            \end{tabular}
+        }
+    \end{table} 
+\end{center}
+
+\vspace{1em}
+
 \end{document}
