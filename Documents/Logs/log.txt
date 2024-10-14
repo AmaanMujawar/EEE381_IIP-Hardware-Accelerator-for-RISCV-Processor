@@ -1,0 +1,18 @@
+
+Logging commits from 2024-10-07 to 2024-10-13
+
+================================================================================
+2024-10-11 09:46:14 +0100 | Merge branch 'master' into feature/pid
+2024-10-10 21:42:11 +0100 | Merge branch 'master' into feature/log
+2024-10-10 21:41:52 +0100 | [Log] Updated gitignore to remove tracking for python logger
+2024-10-10 21:29:49 +0100 | [PID] Completed template for PID and fixed table structure for risk management
+2024-10-10 16:02:46 +0100 | Merge branch 'feature/log' into feature/pid
+2024-10-10 16:01:11 +0100 | [PID] Updated PID structure and layout of template to match provided template
+2024-10-10 11:58:50 +0100 | [Log] Added Gantt Chart Excel templates and log book gen
+2024-10-10 09:49:48 +0100 | [PID] Uploaded the generated .pdf
+2024-10-10 09:49:27 +0100 | [PID] Added a simple title page for PID
+2024-10-10 09:49:00 +0100 | [PID] Added University of Sheffield Logo
+2024-10-10 09:26:39 +0100 | [Resources] Uploaded number representation reference guide
+2024-10-10 09:25:21 +0100 | [Resources] Uploaded a research paper for CNN based residue number system
+2024-10-10 09:23:52 +0100 | [Master] Added a .gitignore file
+2024-10-10 09:23:28 +0100 | [Master] Added a README file
