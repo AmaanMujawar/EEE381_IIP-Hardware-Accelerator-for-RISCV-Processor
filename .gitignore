@@ -10,3 +10,6 @@
 
 #Ignore python logging file
 Documents/Logs/*.py
+
+#Ignore autorun batch file
+Documents/Logs/*.bat
