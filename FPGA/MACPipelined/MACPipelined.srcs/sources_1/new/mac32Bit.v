@@ -5,7 +5,7 @@
 // 
 // Create Date: 10/23/2024 02:36:09 PM
 // Design Name: 32-Bit Pipeline MAC module
-// Module Name: mac8Bit
+// Module Name: mac32Bit
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 

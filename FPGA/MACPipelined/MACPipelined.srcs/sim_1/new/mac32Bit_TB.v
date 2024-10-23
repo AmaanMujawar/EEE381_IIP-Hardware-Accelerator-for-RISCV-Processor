@@ -5,7 +5,7 @@
 // 
 // Create Date: 10/23/2024 02:58:32 PM
 // Design Name: 32-Bit Pipeline MAC TestBench
-// Module Name: mac8Bit_TB
+// Module Name: mac32Bit_TB
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
