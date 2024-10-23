@@ -1,9 +1,9 @@
 Time resolution is 1 ps
-Time: 0 | a =   0, b =   0, acc_in =     0, acc_out =     0
-Time: 40000 | a =   5, b =   3, acc_in =     0, acc_out =     0
-Time: 60000 | a =  10, b =   4, acc_in =     0, acc_out =     0
-Time: 80000 | a =   7, b =   2, acc_in =     0, acc_out =     0
-Time: 110000 | a =   7, b =   2, acc_in =     0, acc_out =    15
-Time: 130000 | a =   7, b =   2, acc_in =     0, acc_out =    40
-Time: 150000 | a =   7, b =   2, acc_in =     0, acc_out =    14
-$stop called at time : 180 ns : File "D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/MACPipelined/MACPipelined.srcs/sim_1/new/mac8Bit_TB.v" Line 79
+Time: 0 | a =          0, b =          0, acc_in =                    0, acc_out =                    0
+Time: 40000 | a =          5, b =          3, acc_in =                    0, acc_out =                    0
+Time: 60000 | a =         10, b =          4, acc_in =                    0, acc_out =                    0
+Time: 80000 | a =          7, b =          2, acc_in =                    0, acc_out =                    0
+Time: 110000 | a =          7, b =          2, acc_in =                    0, acc_out =                   15
+Time: 130000 | a =          7, b =          2, acc_in =                    0, acc_out =                   40
+Time: 150000 | a =          7, b =          2, acc_in =                    0, acc_out =                   14
+$stop called at time : 180 ns : File "D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/MACPipelined/MACPipelined.srcs/sim_1/new/mac32Bit_TB.v" Line 79
