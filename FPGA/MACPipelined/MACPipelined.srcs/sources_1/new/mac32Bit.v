@@ -23,10 +23,10 @@
 module mac32Bit(
     input clk, // Clock input
     input rst_n, // Negated reset input
-    input [31:0] a, // First 8-bit input
-    input [31:0] b, // Second 8-bit input
-    input [63:0] acc_in, // 16-bit accumulator input
-    output reg [63:0] acc_out // 16-bit accumulator output
+    input [31:0] a, // First 32-bit input
+    input [31:0] b, // Second 32-bit input
+    input [63:0] acc_in, // 64-bit accumulator input
+    output reg [63:0] acc_out // 64-bit accumulator output
     );
     
     // Pipeline registers
