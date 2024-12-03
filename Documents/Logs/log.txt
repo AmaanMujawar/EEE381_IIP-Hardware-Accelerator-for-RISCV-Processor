@@ -25,3 +25,21 @@ Logging commits from 2024-10-21 to 2024-10-27
 2024-10-22 10:42:03 +0100 | [Notes] Notes on approximate computing for hardware accelerator RISC-V SoC
 2024-10-22 10:06:04 +0100 | [Resources] Added RISCV RVfpga slides and read through
 
+Logging commits from 2024-11-25 to 2024-12-01
+
+================================================================================
+2024-12-01 14:49:02 +0000 | [LitRev] Updated Theory and Literature Review upto fuzzy memoization
+2024-11-28 12:16:37 +0000 | [LitRev] Progressed in theory and literature review section
+2024-11-27 16:37:22 +0000 | [LitRev] Uploaded an updated section of the Literature Review, completed Background and Project Management sections
+2024-11-26 13:25:19 +0000 | [LitRev] Added a word .docx file for literature review template
+2024-11-26 13:24:24 +0000 | [PID] Removed redundant .docx word files
+2024-10-30 16:07:02 +0000 | [PID] Final changes made for PID ready for submission
+2024-10-30 15:59:12 +0000 | [Log] Updated the Gantt chart final for submission
+2024-10-30 14:00:06 +0000 | [PID] Made a few changes to document structure after receiving feedback; need to add updated Gantt chart
+2024-10-28 10:57:54 +0000 | [FPGA] Bug fix from Issue #1
+2024-10-28 10:33:04 +0000 | [PID] Made changes to the draft report adhering to points listed in the mark sheet
+2024-10-28 09:55:43 +0000 | [PID] Uploaded Gantt chart into draft ready for draft submission
+2024-10-28 09:51:27 +0000 | [Log] Updated Gantt chart and combined two files into one sheet (SEM1 & SEM2)
+2024-10-28 08:22:55 +0000 | [Log] Updated weekly log
+2024-10-26 11:27:45 +0100 | [PID] Uploaded a draft version of the PID for submission (final copy will be marked up in LateX)
+
