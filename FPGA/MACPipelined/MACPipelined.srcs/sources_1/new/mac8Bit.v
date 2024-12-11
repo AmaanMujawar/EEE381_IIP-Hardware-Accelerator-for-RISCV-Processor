@@ -36,24 +36,24 @@ module mac8Bit(
     always @(posedge clk or negedge rst_n) begin
         if(!rst_n) begin
             // Reset all registers
-            a_reg <= 0;
-            b_reg <= 0;
-            mult_reg <= 0;
-            add_reg <= 0;
-            acc_out <= 0;
+            a_reg = 0;
+            b_reg = 0;
+            mult_reg = 0;
+            add_reg = 0;
+            acc_out = 0;
         end else begin
             // Stage 1: Register the inputs
-            a_reg <= a;
-            b_reg <= b;
+            a_reg = a;
+            b_reg = b;
             
             // Stage 2: Multiply the inputs
-            mult_reg <= a_reg * b_reg;
+            mult_reg = a_reg * b_reg;
             
             // Stage 3: Add the result to the accumulator
-            add_reg <= mult_reg + acc_in;
+            add_reg = mult_reg + acc_in;
             
             // Output the final accumulated value
-            acc_out <= add_reg;
+            acc_out = add_reg;
         end
     end
 endmodule

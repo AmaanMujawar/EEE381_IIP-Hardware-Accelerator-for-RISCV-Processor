@@ -9,16 +9,9 @@
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
+// Description: Fixed testbench with synchronous feedback for acc_in.
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
 
 module mac8Bit_TB;
     reg clk;
@@ -30,12 +23,12 @@ module mac8Bit_TB;
     
     // Instantiate the pipelined MAC module
     mac8Bit uut(
-    .clk(clk),
-    .rst_n(rst_n),
-    .a(a),
-    .b(b),
-    .acc_in(acc_in),
-    .acc_out(acc_out)
+        .clk(clk),
+        .rst_n(rst_n),
+        .a(a),
+        .b(b),
+        .acc_in(acc_in),
+        .acc_out(acc_out)
     );
     
     // Clock generation @ 50MHz
@@ -46,35 +39,35 @@ module mac8Bit_TB;
     
     // Simulate
     initial begin
-        // Initialise inputs
+        // Initialize inputs
         rst_n = 0;
         a = 0;
         b = 0;
         acc_in = 0;
         
-        // Reset
+        // Reset the module
         #20;
         rst_n = 1;
         
         // Test Case 1
-        #20;
+        @(posedge clk); // Wait for a clock edge
         a = 8'd5;
         b = 8'd3;
-        acc_in = 16'd0; // Initialise the accumulator
-        
-        // Test Case 2 (Change input for a and b before the result of previous calculation)
-        #20;
+        acc_in = 0; // Initialize accumulator
+
+        // Test Case 2
+        @(posedge clk); // Wait for the next clock edge
         a = 8'd10;
         b = 8'd4;
-        acc_in = acc_out; // Feed last accumulator output to input
+        acc_in = acc_out; // Update acc_in synchronously with the clock
 
-        // Test Case 3 (Change input for a and b before the result of previous calculation)
-        #20;
+        // Test Case 3
+        @(posedge clk); // Wait for the next clock edge
         a = 8'd7;
         b = 8'd2;
-        acc_in = acc_out; // Feed last accumulator output to input
-        
-        // End simulation
+        acc_in = acc_out; // Update acc_in synchronously with the clock
+
+        // Wait a few clock cycles for final results
         #100;
         $stop;
     end
