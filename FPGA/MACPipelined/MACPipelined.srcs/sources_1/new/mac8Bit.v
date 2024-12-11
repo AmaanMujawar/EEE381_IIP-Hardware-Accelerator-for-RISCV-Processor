@@ -25,13 +25,13 @@ module mac8Bit(
     input rst_n, // Negated reset input
     input [7:0] a, // First 8-bit input
     input [7:0] b, // Second 8-bit input
-    input [15:0] acc_in, // 16-bit accumulator input
-    output reg [15:0] acc_out // 16-bit accumulator output
+    input [63:0] acc_in, // 16-bit accumulator input
+    output reg [63:0] acc_out // 16-bit accumulator output
     );
     
     // Pipeline registers
     reg [7:0] a_reg, b_reg;
-    reg [15:0] mult_reg, add_reg;
+    reg [63:0] mult_reg, add_reg;
     
     always @(posedge clk or negedge rst_n) begin
         if(!rst_n) begin

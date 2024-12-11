@@ -18,8 +18,8 @@ module mac8Bit_TB;
     reg rst_n;
     reg [7:0] a;
     reg [7:0] b;
-    reg [15:0] acc_in;
-    wire [15:0] acc_out;
+    reg [63:0] acc_in;
+    wire [63:0] acc_out;
     
     // Instantiate the pipelined MAC module
     mac8Bit uut(
@@ -31,6 +31,7 @@ module mac8Bit_TB;
         .acc_out(acc_out)
     );
     
+    integer i;
     // Clock generation @ 50MHz
     initial begin
         clk = 0;
@@ -49,23 +50,13 @@ module mac8Bit_TB;
         #20;
         rst_n = 1;
         
-        // Test Case 1
-        @(posedge clk); // Wait for a clock edge
-        a = 8'd5;
-        b = 8'd3;
-        acc_in = 0; // Initialize accumulator
 
-        // Test Case 2
-        @(posedge clk); // Wait for the next clock edge
-        a = 8'd10;
-        b = 8'd4;
-        acc_in = acc_out; // Update acc_in synchronously with the clock
-
-        // Test Case 3
-        @(posedge clk); // Wait for the next clock edge
-        a = 8'd7;
-        b = 8'd2;
-        acc_in = acc_out; // Update acc_in synchronously with the clock
+        for (i = 0; i < 1000; i = i + 1) begin
+            @(posedge clk); // Wait for a clock edge
+            a = $random;
+            b = $random;
+            acc_in = acc_out;
+        end
 
         // Wait a few clock cycles for final results
         #100;
