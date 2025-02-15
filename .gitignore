@@ -13,3 +13,7 @@ Documents/Logs/*.py
 
 #Ignore autorun batch file
 Documents/Logs/*.bat
+
+#Ignore test vector files
+Documents/Testing/ApproximateAdder/*.txt
+
