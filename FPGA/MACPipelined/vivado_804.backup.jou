@@ -1,0 +1,271 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Dec 11 11:23:39 2024
+# Process ID: 804
+# Current directory: D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/MACPipelined
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6152 D:\Amaan\Documents\University\Year 3\EEE381_IIP\FPGA\MACPipelined\MACPipelined.xpr
+# Log file: D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/MACPipelined/vivado.log
+# Journal file: D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/MACPipelined\vivado.jou
+# Running On: THUNDERBIRD, OS: Windows, CPU Frequency: 3800 MHz, CPU Physical cores: 16, Host memory: 34240 MB
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/MACPipelined/MACPipelined.xpr}
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top mac8Bit [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top mac8Bit_TB [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source mac8Bit_TB.tcl
+close_sim
+launch_simulation
+source mac8Bit_TB.tcl
+close_sim
+launch_simulation
+launch_simulation
+source mac8Bit_TB.tcl
+close_sim
+launch_simulation
+source mac8Bit_TB.tcl
+close_sim
+launch_simulation
+source mac8Bit_TB.tcl
+add_bp {D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/MACPipelined/MACPipelined.srcs/sim_1/new/mac8Bit_TB.v} 53
+run 10 us
+run all
+close_sim
+launch_simulation
+source mac8Bit_TB.tcl
+remove_bps -file {D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/MACPipelined/MACPipelined.srcs/sim_1/new/mac8Bit_TB.v} -line 53
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+add_bp {D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/MACPipelined/MACPipelined.srcs/sim_1/new/mac8Bit_TB.v} 53
+close_sim
+launch_simulation
+source mac8Bit_TB.tcl
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+close_sim
+launch_simulation
+source mac8Bit_TB.tcl
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+close_sim
+launch_simulation
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+source mac32Bit_TB.tcl
+close_sim
+launch_simulation
+source mac32Bit_TB.tcl
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top mac8Bit_TB [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source mac8Bit_TB.tcl
+remove_bps -file {D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/MACPipelined/MACPipelined.srcs/sim_1/new/mac8Bit_TB.v} -line 53
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+close_sim
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source mac8Bit_TB.tcl
+run 10 us
+run 10 us
+close_sim
+launch_simulation
+source mac8Bit_TB.tcl
+run 10 us
+run 10 us
+close_sim
