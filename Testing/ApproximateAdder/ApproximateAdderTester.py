@@ -1,4 +1,5 @@
 from tabulate import tabulate
+from collections import Counter
 
 # Function to compare the expected and calculated results
 def read_test_vectors(file_path):
@@ -45,6 +46,7 @@ def process_test_vectors(file_path):
     total_tests = len(test_vectors)
     passed_tests = 0
     failed_tests = 0
+    differences = []
 
     for idx, (a, b, expected_sum, expected_cout) in enumerate(test_vectors):
         # Perform OR addition on lower 4 bits and get carry
@@ -55,6 +57,13 @@ def process_test_vectors(file_path):
         
         # Combine the results and cap to 8 bits
         calculated_sum = (calculated_sum_high + calculated_sum_low)[-8:]
+        
+        # Calculate exact sum for comparison
+        exact_sum = bin(int(a, 2) + int(b, 2))[2:].zfill(8)[-8:]
+        
+        # Calculate difference
+        diff = int(calculated_sum, 2) - int(exact_sum, 2)
+        differences.append(diff)
         
         # Compare expected vs calculated results
         sum_match = calculated_sum == expected_sum
@@ -78,6 +87,17 @@ def process_test_vectors(file_path):
         # Color carry propagation
         carry_info = f"\033[94mPropagated\033[0m" if carry_low else "No"
         
+        # Color differences
+        diff_color = ""
+        if diff == 0:
+            diff_color = "\033[92m"  # Green for Zero Error
+        elif -3 <= diff <= 3:
+            diff_color = "\033[96m"  # Cyan for Small Errors
+        elif -6 <= diff <= -4 or 4 <= diff <= 6:
+            diff_color = "\033[95m"  # Magenta for Moderate Errors
+        else:
+            diff_color = "\033[91m"  # Red for Larger Errors
+        
         # Add the result to the table
         table_data.append([
             f"\033[93m{idx + 1}\033[0m",  # Yellow Test Number
@@ -88,13 +108,15 @@ def process_test_vectors(file_path):
             calculated_sum, 
             calculated_cout, 
             carry_info, 
-            status
+            status,
+            exact_sum,
+            f"{diff_color}{diff}\033[0m"
         ])
     
     # Highlighted Headers
     headers = ["Test #", "a", "b", "Expected Sum", "Expected Cout", 
                "Calculated Sum", "Calculated Cout", "Carry Propagation", 
-               "Status"]
+               "Status", "Exact Sum", "Difference"]
     headers = [f"\033[93m{h}\033[0m" for h in headers]  # Yellow headers
 
     # Print the results in a table format
@@ -105,6 +127,31 @@ def process_test_vectors(file_path):
     print(f"Total Tests: {total_tests}")
     print(f"Passed: \033[92m{passed_tests}\033[0m")  # Green for Passed
     print(f"Failed: \033[91m{failed_tests}\033[0m")  # Red for Failed
+
+    # Difference Analysis
+    diff_counter = Counter(differences)
+    diff_table = []
+
+    for diff, freq in sorted(diff_counter.items()):
+        percentage = (freq / total_tests) * 100
+        color = ""
+        if diff == 0:
+            color = "\033[92m"  # Green for Zero Error
+        elif -3 <= diff <= 3:
+            color = "\033[96m"  # Cyan for Small Errors
+        elif -6 <= diff <= -4 or 4 <= diff <= 6:
+            color = "\033[95m"  # Magenta for Moderate Errors
+        else:
+            color = "\033[91m"  # Red for Larger Errors
+        
+        diff_table.append([
+            f"{color}{diff}\033[0m", 
+            freq, 
+            f"{color}{percentage:.2f}%\033[0m"
+        ])
+    
+    print("\nDifference Analysis:")
+    print(tabulate(diff_table, headers=["Difference", "Frequency", "Percentage"], tablefmt="grid"))
 
 # File path for test vectors
 file_path = 'test_vectors.txt'
