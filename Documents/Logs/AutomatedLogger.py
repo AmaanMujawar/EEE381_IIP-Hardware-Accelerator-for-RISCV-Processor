@@ -89,6 +89,9 @@ def generate_commit_table():
         # Define headers
         headers = ['Commit #', 'Commit Hash', 'Commit Message', 'Author', 'Commit Date']
         
+        # Define column alignments: 'left' for 'Commit Message', 'center' for others
+        colalign = ('center', 'center', 'left', 'center', 'center')
+        
         # Generate table for terminal display with colors
         table_with_colors = tabulate(
             [[COLORS["yellow"] + str(i) + COLORS["reset"],
@@ -98,7 +101,7 @@ def generate_commit_table():
               COLORS["magenta"] + commit_date + COLORS["reset"]]
              for i, commit_hash, commit_message, author_name, commit_date in commits],
             headers=[COLORS["blue"] + COLORS["bold"] + header + COLORS["reset"] for header in headers],
-            tablefmt='simple', numalign="center", stralign="center"
+            tablefmt='simple', numalign="center", stralign=colalign
         )
         
         # Print the colored table to the terminal
@@ -108,7 +111,7 @@ def generate_commit_table():
         table_without_colors = tabulate(
             commits,
             headers=headers,
-            tablefmt='simple', numalign="center", stralign="center"
+            tablefmt='simple', numalign="center", stralign=colalign
         )
         
         # Write the table to a log.txt file
@@ -116,6 +119,7 @@ def generate_commit_table():
             file.write(table_without_colors)
     else:
         print("No branches found or unable to fetch branches.")
+
 
 # Run the function to generate and print the commit table
 if __name__ == "__main__":
