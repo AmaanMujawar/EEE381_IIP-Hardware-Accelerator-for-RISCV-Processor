@@ -1,0 +1,11 @@
+0.7
+2020.2
+Oct 19 2021
+03:16:22
+D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/ApproximateMultiplier/ApproximateMultiplier.sim/sim_1/behav/xsim/glbl.v,1634335545,verilog,,,,glbl,,,,,,,,
+D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/ApproximateMultiplier/ApproximateMultiplier.srcs/sim_1/new/DaddaPPAMTB.v,1739982944,verilog,,,,tb_dadda_PPAM_1_3,,,,,,,,
+D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/ApproximateMultiplier/ApproximateMultiplier.srcs/sources_1/new/4to2Comp.v,1739981790,verilog,,D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/ApproximateMultiplier/ApproximateMultiplier.srcs/sources_1/new/AND.v,,COMP4to2,,,,,,,,
+D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/ApproximateMultiplier/ApproximateMultiplier.srcs/sources_1/new/AND.v,1739981782,verilog,,D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/ApproximateMultiplier/ApproximateMultiplier.srcs/sources_1/new/DaddaPPAM.v,,AND2,,,,,,,,
+D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/ApproximateMultiplier/ApproximateMultiplier.srcs/sources_1/new/DaddaPPAM.v,1739982101,verilog,,D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/ApproximateMultiplier/ApproximateMultiplier.srcs/sources_1/new/FA.v,,dadda_PPAM_1_3,,,,,,,,
+D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/ApproximateMultiplier/ApproximateMultiplier.srcs/sources_1/new/FA.v,1739981807,verilog,,D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/ApproximateMultiplier/ApproximateMultiplier.srcs/sources_1/new/HA.v,,FA,,,,,,,,
+D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/ApproximateMultiplier/ApproximateMultiplier.srcs/sources_1/new/HA.v,1739981814,verilog,,D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/ApproximateMultiplier/ApproximateMultiplier.srcs/sim_1/new/DaddaPPAMTB.v,,HA,,,,,,,,

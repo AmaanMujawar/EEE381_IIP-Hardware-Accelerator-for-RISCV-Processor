@@ -1,0 +1,13 @@
+Time resolution is 1 ps
+Generating 1000 random test cases...
+Test case           0 completed.
+Test case         100 completed.
+Test case         200 completed.
+Test case         300 completed.
+Test case         400 completed.
+Test case         500 completed.
+Test case         600 completed.
+Test case         700 completed.
+Test case         800 completed.
+Test case         900 completed.
+$finish called at time : 10010 ps : File "D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/ApproximateMultiplier/ApproximateMultiplier.srcs/sim_1/new/DaddaPPAMTB.v" Line 57
