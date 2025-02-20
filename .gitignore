@@ -16,4 +16,5 @@ Documents/Logs/*.bat
 
 #Ignore python test vectors text file
 Testing/ApproximateAdder/*.txt
+Testing/ApproximateMultiplier/*.txt
 
