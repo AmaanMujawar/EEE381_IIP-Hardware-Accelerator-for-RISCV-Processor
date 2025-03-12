@@ -1,0 +1,16 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../ApproximateMACUnit.srcs/sources_1/new/AND.v" \
+"../../../../ApproximateMACUnit.srcs/sources_1/new/ApproxAdder.v" \
+"../../../../ApproximateMACUnit.srcs/sources_1/new/ApproxMAC.v" \
+"../../../../ApproximateMACUnit.srcs/sources_1/new/ApproxMult.v" \
+"../../../../ApproximateMACUnit.srcs/sources_1/new/COMP4to2.v" \
+"../../../../ApproximateMACUnit.srcs/sources_1/new/FA.v" \
+"../../../../ApproximateMACUnit.srcs/sources_1/new/HA.v" \
+"../../../../ApproximateMACUnit.srcs/sim_1/new/MAC_TB.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

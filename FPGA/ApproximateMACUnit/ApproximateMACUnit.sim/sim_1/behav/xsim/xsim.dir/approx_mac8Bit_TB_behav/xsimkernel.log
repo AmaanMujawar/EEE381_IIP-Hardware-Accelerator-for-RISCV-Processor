@@ -1,0 +1,4 @@
+Running: xsim.dir/approx_mac8Bit_TB_behav/xsimk.exe -simmode gui -wdb approx_mac8Bit_TB_behav.wdb -simrunnum 0 -socket 52740
+Design successfully loaded
+Design Loading Memory Usage: 7216 KB (Peak: 7216 KB)
+Design Loading CPU Usage: 0 ms

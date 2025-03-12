@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/MACPipelined/MACPipelined.srcs/sources_1/new/mac8Bit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mac8Bit
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Amaan/Documents/University/Year 3/EEE381_IIP/FPGA/MACPipelined/MACPipelined.srcs/sim_1/new/mac8Bit_TB.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mac8Bit_TB
