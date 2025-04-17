@@ -153,6 +153,22 @@ def process_test_vectors(file_path):
     print("\nDifference Analysis:")
     print(tabulate(diff_table, headers=["Difference", "Frequency", "Percentage"], tablefmt="grid"))
 
+    abs_errors = [abs(d) for d in differences]
+    exact_values = [int(a, 2) + int(b, 2) for a, b, _, _ in test_vectors]
+
+    mae = sum(abs_errors) / total_tests
+    mre = sum(abs_error / exact if exact != 0 else 0 for abs_error, exact in zip(abs_errors, exact_values)) / total_tests
+    wce = max(abs_errors)
+    error_rate = (failed_tests / total_tests) * 100
+
+    # Print the error metrics
+    print("\nError Metrics:")
+    print(f"Mean Absolute Error (MAE): \033[93m{mae:.4f}\033[0m")
+    print(f"Mean Relative Error (MRE): \033[93m{mre:.4f}\033[0m")
+    print(f"Worst Case Error (WCE): \033[93m{wce}\033[0m")
+    print(f"Error Rate: \033[93m{error_rate:.2f}%\033[0m")
+
+
 # File path for test vectors
 file_path = 'test_vectors.txt'
 process_test_vectors(file_path)
