@@ -42,90 +42,98 @@ def process_test_vectors(file_path):
     failed_tests = 0
     differences = []
 
+    # For error metrics
+    abs_errors = []
+    rel_errors = []
+    non_zero_errors = []
+
     for idx, (a_bin, b_bin, verilog_p_bin) in enumerate(test_vectors):
-        # Calculate the exact product
         exact_p_bin = calculate_exact_product(a_bin, b_bin)
-        
-        # Calculate the product using the algorithm (calculated product)
         calculated_p_bin = calculate_calculated_product(a_bin, b_bin)
-        
-        # Calculate the difference between the Verilog Product and the Exact Product
-        diff = int(verilog_p_bin, 2) - int(exact_p_bin, 2)
+
+        exact_val = int(exact_p_bin, 2)
+        verilog_val = int(verilog_p_bin, 2)
+
+        diff = verilog_val - exact_val
         differences.append(diff)
-        
-        # Compare Verilog product vs exact product
+        abs_errors.append(abs(diff))
+        non_zero_errors.append(1 if diff != 0 else 0)
+
+        # Avoid divide-by-zero for relative error
+        rel_error = abs(diff) / exact_val if exact_val != 0 else 0
+        rel_errors.append(rel_error)
+
         p_match = calculated_p_bin == exact_p_bin
         status = "Pass" if p_match else "Fail"
-        
-        # Color status
+
         if status == "Pass":
-            status = f"\033[92m{status}\033[0m"  # Green
+            status = f"\033[92m{status}\033[0m"
             passed_tests += 1
         else:
-            status = f"\033[91m{status}\033[0m"  # Red
+            status = f"\033[91m{status}\033[0m"
             failed_tests += 1
-        
-        # Color differences
-        diff_color = ""
+
         if diff == 0:
-            diff_color = "\033[92m"  # Green for Zero Error
+            diff_color = "\033[92m"
         elif -3 <= diff <= 3:
-            diff_color = "\033[96m"  # Cyan for Small Errors
+            diff_color = "\033[96m"
         elif -6 <= diff <= -4 or 4 <= diff <= 6:
-            diff_color = "\033[95m"  # Magenta for Moderate Errors
+            diff_color = "\033[95m"
         else:
-            diff_color = "\033[91m"  # Red for Larger Errors
-        
-        # Add the result to the table
+            diff_color = "\033[91m"
+
         table_data.append([
-            f"\033[93m{idx + 1}\033[0m",  # Yellow Test Number
+            f"\033[93m{idx + 1}\033[0m",
             a_bin, 
             b_bin, 
-            verilog_p_bin,  # Verilog Product
-            calculated_p_bin,  # Calculated Product
-            exact_p_bin,  # Exact Product
+            verilog_p_bin,
+            calculated_p_bin,
+            exact_p_bin,
             status,
             f"{diff_color}{diff}\033[0m"
         ])
     
-    # Highlighted Headers
     headers = ["Test #", "A (binary)", "B (binary)", "Verilog Product", 
                "Calculated Product", "Exact Product", "Status", "Difference"]
-    headers = [f"\033[93m{h}\033[0m" for h in headers]  # Yellow headers
-
-    # Print the results in a table format
+    headers = [f"\033[93m{h}\033[0m" for h in headers]
     print(tabulate(table_data, headers=headers, tablefmt="grid"))
     
-    # Summary
     print("\nSummary:")
     print(f"Total Tests: {total_tests}")
-    print(f"Passed: \033[92m{passed_tests}\033[0m")  # Green for Passed
-    print(f"Failed: \033[91m{failed_tests}\033[0m")  # Red for Failed
+    print(f"Passed: \033[92m{passed_tests}\033[0m")
+    print(f"Failed: \033[91m{failed_tests}\033[0m")
 
-    # Difference Analysis
     diff_counter = Counter(differences)
     diff_table = []
-
     for diff, freq in sorted(diff_counter.items()):
         percentage = (freq / total_tests) * 100
-        color = ""
         if diff == 0:
-            color = "\033[92m"  # Green for Zero Error
+            color = "\033[92m"
         elif -3 <= diff <= 3:
-            color = "\033[96m"  # Cyan for Small Errors
+            color = "\033[96m"
         elif -6 <= diff <= -4 or 4 <= diff <= 6:
-            color = "\033[95m"  # Magenta for Moderate Errors
+            color = "\033[95m"
         else:
-            color = "\033[91m"  # Red for Larger Errors
-        
+            color = "\033[91m"
         diff_table.append([
             f"{color}{diff}\033[0m", 
             freq, 
             f"{color}{percentage:.2f}%\033[0m"
         ])
-    
     print("\nDifference Analysis:")
     print(tabulate(diff_table, headers=["Difference", "Frequency", "Percentage"], tablefmt="grid"))
+
+    # Final error metrics
+    mae = np.mean(abs_errors)
+    mre = np.mean(rel_errors)
+    wce = max(abs_errors)
+    error_rate = (sum(non_zero_errors) / total_tests) * 100
+
+    print("\nError Metrics:")
+    print(f"Mean Absolute Error (MAE): {mae:.4f}")
+    print(f"Mean Relative Error (MRE): {mre:.4f}")
+    print(f"Worst Case Error (WCE): {wce}")
+    print(f"Error Rate: {error_rate:.2f}%")
 
 # File path for test vectors
 file_path = 'test_vectors.txt'
