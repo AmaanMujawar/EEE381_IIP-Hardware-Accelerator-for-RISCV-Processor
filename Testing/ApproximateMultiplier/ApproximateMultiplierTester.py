@@ -1,6 +1,7 @@
 import numpy as np
 from tabulate import tabulate
 from collections import Counter
+import csv  # Import CSV module
 
 # Function to read binary test vectors from file and process them
 def read_test_vectors(file_path):
@@ -134,6 +135,20 @@ def process_test_vectors(file_path):
     print(f"Mean Relative Error (MRE): {mre:.4f}")
     print(f"Worst Case Error (WCE): {wce}")
     print(f"Error Rate: {error_rate:.2f}%")
+
+    # Save the differences data to a CSV file for MATLAB analysis
+    with open('error_differences.csv', 'w', newline='') as csvfile:
+        fieldnames = ['Test #', 'Difference', 'Absolute Error', 'Relative Error']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        writer.writeheader()
+        for idx, diff in enumerate(differences):
+            writer.writerow({
+                'Test #': idx + 1,
+                'Difference': diff,
+                'Absolute Error': abs_errors[idx],
+                'Relative Error': rel_errors[idx]
+            })
 
 # File path for test vectors
 file_path = 'test_vectors.txt'

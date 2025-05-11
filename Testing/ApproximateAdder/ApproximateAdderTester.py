@@ -1,3 +1,4 @@
+import csv
 from tabulate import tabulate
 from collections import Counter
 
@@ -153,6 +154,14 @@ def process_test_vectors(file_path):
     print("\nDifference Analysis:")
     print(tabulate(diff_table, headers=["Difference", "Frequency", "Percentage"], tablefmt="grid"))
 
+    # Save the raw differences (decimals) to a CSV file
+    with open("raw_differences.csv", "w", newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Difference"])  # Write header
+        for diff in differences:
+            writer.writerow([diff])  # Write each difference as a row
+
+    # Error Metrics
     abs_errors = [abs(d) for d in differences]
     exact_values = [int(a, 2) + int(b, 2) for a, b, _, _ in test_vectors]
 
